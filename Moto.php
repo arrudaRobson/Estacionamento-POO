@@ -2,9 +2,20 @@
 
 class Moto
 {
-    private $moto;
-    function __construct($novaMoto)
+    private $placa;
+
+    public function __construct($placa)
     {
-        $this->moto = $novaMoto;
+        $this->placa = $placa;
+    }
+
+    public function getPlaca()
+    {
+        return $this->placa;
+    }
+
+    public function setPlaca($placa)
+    {
+        return $this->placa = $placa;
     }
 }

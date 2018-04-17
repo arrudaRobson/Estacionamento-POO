@@ -1,11 +1,12 @@
 <?php
-require 'Estacionamento.php';
-require 'EstacionaVeiculo.php';
-require_once 'Moto.php';
+require_once 'Manobrista.php';
 
 $park = new Estacionamento(10);
 $vagasPark = $park->getVagas();
 
-$pcx = new EstacionaVeiculo();
-$pcx->ocupaVaga($park);
+$pcx = new Moto("aaa-1234");
+$ze = new Manobrista();
+$ze->estacionar($park, $pcx);
 $vagasPark = $park->getVagas();
+echo $vagasPark;
+

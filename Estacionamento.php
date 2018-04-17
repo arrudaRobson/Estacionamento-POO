@@ -3,8 +3,9 @@
 class Estacionamento
 {
     private $vagas;
+    private $veiculos = [];
 
-    function __construct($vagas)
+    public function __construct($vagas)
     {
         $this->vagas = $vagas;
     }
@@ -17,5 +18,15 @@ class Estacionamento
     public function setVagas($vagas)
     {
         return $this->vagas = $vagas;
+    }
+
+    public function posicionarVeiculo($veiculo)
+    {
+        $this->veiculos[] = $veiculo;
+    }
+
+    public function getVeiculosPlacas()
+    {
+
     }
 }
