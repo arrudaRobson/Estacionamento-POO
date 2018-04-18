@@ -7,7 +7,7 @@ class Manobrista
     public function estacionar(Estacionamento $vaga, Moto $moto)
     {
         $vaga->posicionarVeiculo($moto, $vaga);
-        echo "Veículo placa: " . $moto->getPlaca() . " estacionado.";
+        echo "Veículo placa: " . $moto->getPlaca() . ", estacionado.";
         echo "<br>";
     }
 }
