@@ -12,7 +12,7 @@ $ze->estacionar($park, $pcx);
 $imprenza = new Veiculo(2, "Subaru", "Imprenza", "verde", "aaa-1111");
 $ze->estacionar($park, $imprenza);
 
-echo "Vagas disponíveis para motos: " . $park->getVagasMoto();
-echo "Vagas disponíveis para carros: " . $park->getVagasCompacta();
-echo "<br>Placas dos veículos estacionados: <br>" . $park->getVeiculos();
+echo "<br>Vagas disponíveis para motos: " . $park->getVagasMoto();
+echo "<br>Vagas disponíveis para carros: " . $park->getVagasCompacta();
+echo "<br><br>Placas dos veículos estacionados: <br>" . $park->getVeiculos();
 

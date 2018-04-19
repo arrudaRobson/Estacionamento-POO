@@ -9,13 +9,13 @@ class Manobrista
         if ($veiculo->getTipo() == 1) {
             $estacionamento->posicionarMoto($veiculo);
             echo $veiculo->getMarca() . ", " . $veiculo->getModelo() . ", placa: " .
-            $veiculo->getPlaca() . ", estacionado.";
+            $veiculo->getPlaca() . ".";
             echo "<br>";
 
         } else if ($veiculo->getTipo() == 2) {
             $estacionamento->posicionarCarro($veiculo);
             echo $veiculo->getMarca() . ", " . $veiculo->getModelo() . ", placa: " .
-            $veiculo->getPlaca() . ", estacionado.";
+            $veiculo->getPlaca() . ".";
             echo "<br>";
         }
     }

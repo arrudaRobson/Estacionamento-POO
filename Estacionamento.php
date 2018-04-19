@@ -24,7 +24,7 @@ class Estacionamento
         return $this->vagasMoto = $vagasMoto;
     }
 
-     public function getVagasCompacta()
+    public function getVagasCompacta()
     {
         return $this->vagasCompacta;
     }
@@ -40,13 +40,13 @@ class Estacionamento
                 $this->veiculos[] = $veiculo;
                 $this->vagasMoto --;
 
-            } else if ($this->vagasCompacta > 0) {
+        } else if ($this->vagasCompacta > 0) {
                 $this->veiculos[] = $veiculo;
                 $this->vagasCompacta --;
 
-            } else {
+        } else {
                 echo "Não temos vagas!";
-            }
+        }
     }
 
     public function posicionarCarro($veiculo)
@@ -55,20 +55,14 @@ class Estacionamento
                 $this->veiculos[] = $veiculo;
                 $this->vagasCompacta --;
 
-            } else {
-                echo "Não temos vagas!";
-            }
+        } else {
+            echo "Não temos vagas!";
+        }
     }
 
     public function getVeiculos()
     {
-        $modelo = "";
-        $cor = "";
-        $placas = "";
-
         for ($i=0; $i < count($this->veiculos); $i++) {
-            $modelo .= $this->veiculos[$i]->getModelo() . ", ";
-            $cor .= $this->veiculos[$i]->getCor() . ", ";
             $placas .= $this->veiculos[$i]->getPlaca() . "<br>";
         }
 
