@@ -4,40 +4,60 @@ require_once 'Veiculo.php';
 
 class Estacionamento
 {
-    private $vagas;
+    private $vagasMoto;
+    private $vagasCompacta;
     private $veiculos = [];
 
-    public function __construct($vagas)
+    public function __construct($vagasMoto, $vagasCompacta)
     {
-        $this->vagas = $vagas;
+        $this->vagasMoto = $vagasMoto;
+        $this->vagasCompacta = $vagasCompacta;
     }
 
-    public function getVagas()
+    public function getVagasMoto()
     {
-        return $this->vagas;
+        return $this->vagasMoto;
     }
 
-    public function setVagas($vagas)
+    public function setVagasMoto($vagasMoto)
     {
-        return $this->vagas = $vagas;
+        return $this->vagasMoto = $vagasMoto;
     }
 
-    public function posicionarVeiculo($veiculo, $vagas)
+     public function getVagasCompacta()
     {
-        $this->veiculos[] = $veiculo;
-        if ($veiculo->getTipo() == 1) {
-            if ($vagas->getVagas() > 0) {
-                $vagas->setVagas(($vagas->getVagas()) - 1);
+        return $this->vagasCompacta;
+    }
 
+    public function setVagasCompacta($vagasCompacta)
+    {
+        return $this->vagasCompacta = $vagasCompacta;
+    }
+
+    public function posicionarMoto($veiculo)
+    {
+        if ($veiculo->getTipo() == 1 && $this->vagasMoto > 0) {
+                $this->veiculos[] = $veiculo;
+                $this->vagasMoto --;
+
+            } else if ($this->vagasCompacta > 0) {
+                $this->veiculos[] = $veiculo;
+                $this->vagasCompacta --;
+
+            } else {
+                echo "Não temos vagas!";
             }
-        } else if ($veiculo->getTipo() == 2) {
-            if ($vagas->getVagas() > 0) {
-                $vagas->setVagas(($vagas->getVagas()) - 2);
+    }
 
+    public function posicionarCarro($veiculo)
+    {
+        if ($veiculo->getTipo() == 2 && $this->vagasCompacta > 0) {
+                $this->veiculos[] = $veiculo;
+                $this->vagasCompacta --;
+
+            } else {
+                echo "Não temos vagas!";
             }
-        } else {
-            echo "Não temos vagas!";
-        }
     }
 
     public function getVeiculos()

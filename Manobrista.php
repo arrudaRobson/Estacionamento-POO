@@ -4,15 +4,16 @@ require_once 'Estacionamento.php';
 
 class Manobrista
 {
-    public function estacionar(Estacionamento $vaga, Veiculo $veiculo)
+    public function estacionar(Estacionamento $estacionamento, Veiculo $veiculo)
     {
         if ($veiculo->getTipo() == 1) {
-            $vaga->posicionarVeiculo($veiculo, $vaga);
+            $estacionamento->posicionarMoto($veiculo);
             echo $veiculo->getMarca() . ", " . $veiculo->getModelo() . ", placa: " .
             $veiculo->getPlaca() . ", estacionado.";
             echo "<br>";
+
         } else if ($veiculo->getTipo() == 2) {
-            $vaga->posicionarVeiculo($veiculo, $vaga);
+            $estacionamento->posicionarCarro($veiculo);
             echo $veiculo->getMarca() . ", " . $veiculo->getModelo() . ", placa: " .
             $veiculo->getPlaca() . ", estacionado.";
             echo "<br>";
